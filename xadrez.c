@@ -30,7 +30,8 @@ int main() {
 
     
     // variáveis definidas.
-    int torre = 1, bispo = 1, rainha = 1;
+    int torre = 1, bispo = 1, rainha = 1, cavalo = 1;
+
 
     printf("#Movimento da torre#\n");
     //Looping para imprimir o movimento da Torre.
@@ -54,6 +55,17 @@ int main() {
         printf("Esquerda!\n"); // Aqui o programa imprimirá o que está dentro do Do-while 8 vezes.
         rainha++;
     } while (rainha <= 8);
+    
+    printf("\n#Movimento do cavalo#\n");
+    //Looping para imprimir o movimento do cavalo.
+    for (cavalo = 1; cavalo <= 1; cavalo++) // Looping externo
+    {
+        for (int i = 1; i <= 2; i++) // Looping interno
+        {
+            printf("Baixo!\n");
+        }
+        printf("Esquerda!\n");
+    }
 
     return 0;
 }
