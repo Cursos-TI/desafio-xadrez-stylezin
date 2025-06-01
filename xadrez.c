@@ -4,6 +4,43 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+void movtorre(int t){
+    if (t <= 5)
+    {
+        printf("Direita!\n"); // O Programa faz um looping para que seja escrito direita, representando o movimento da torre
+        movtorre(t + 1);
+    }
+    
+}
+
+void movbispo(int b){
+    // faz um looping para que o printf seja executado 5 vezes.
+
+    for (int i = 1; i <= 1; i++)
+    {
+        for (int j = 1; j <= 1; j++)
+        {
+            printf("Direita, ");
+        }
+        printf("cima!\n");
+    }
+    
+    if (b <= 4)
+    {
+        movbispo(b + 1);
+    }
+    
+}
+
+void movrainha(int r){
+    if (r <= 8)
+    {
+        printf("Esquerda!\n"); // Aqui o programa imprimirá o que está dentro do Do-while 8 vezes.
+        movrainha(r + 1);
+    }
+    
+}
+
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -32,39 +69,30 @@ int main() {
     // variáveis definidas.
     int torre = 1, bispo = 1, rainha = 1, cavalo = 1;
 
-
     printf("#Movimento da torre#\n");
-    //Looping para imprimir o movimento da Torre.
-    for(torre = 1; torre <= 5; torre++){
-        printf("Direita!\n"); // O Programa faz um looping para que seja escrito direita, representando o movimento da torre
-    }
-
-    
+    //Looping criado com recursividade para imprimir o movimento da Torre.
+    movtorre(torre);
+ 
     printf("\n#Movimento do Bispo#\n");
     //Looping para imprimir o movimento do Bispo.
-    while (bispo != 6)
-    {
-        printf("Cima, direita!\n"); // Aqui o while faz um looping para que o printf seja executado 5 vezes.
-        bispo++;
-    }
+    movbispo(bispo);
     
     printf("\n#Movimento da Rainha#\n");
     //Looping para imprimir o movimento da Rainha.
-    do
-    {
-        printf("Esquerda!\n"); // Aqui o programa imprimirá o que está dentro do Do-while 8 vezes.
-        rainha++;
-    } while (rainha <= 8);
+    movrainha(rainha);
     
     printf("\n#Movimento do cavalo#\n");
     //Looping para imprimir o movimento do cavalo.
-    for (cavalo = 1; cavalo <= 1; cavalo++) // Looping externo
-    {
-        for (int i = 1; i <= 2; i++) // Looping interno
+    for (cavalo = 1; cavalo < 1 || cavalo == 1; cavalo++) // Looping externo
+    {   
+        if (cavalo != 1) break;
+
+        for (int i = 1; i < 2 || i == 2; i++) // Looping interno
         {
-            printf("Baixo!\n");
+            if (i > 2) break;
+            printf("cima!\n");
         }
-        printf("Esquerda!\n");
+        printf("Direita!\n");
     }
 
     return 0;
